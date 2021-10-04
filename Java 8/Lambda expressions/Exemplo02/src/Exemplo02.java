@@ -43,5 +43,14 @@ public class Exemplo02 {
 
         //lambda expression com argumento
         lista.forEach((produto) -> System.out.println(produto.getNome() + " = " + produto.getPreco()));
+
+        lista.sort((produto1, produto2) -> produto1.getPreco().compareTo(produto2.getPreco())); //ordenando do menor para o maior
+
+        lista.forEach((produto) -> { //utilizando vários métodos dentro da lambda
+                    System.out.println(produto.getNome());
+                    System.out.println(produto.getPreco());
+                }
+        );
+
     }
 }
