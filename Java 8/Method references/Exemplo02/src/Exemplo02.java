@@ -27,6 +27,10 @@ class Produto {
     public void setPreco(Double preco) {
         this.preco = preco;
     }
+
+    public void imprime(){
+        System.out.println(nome + " = " + preco);
+    }
 }
 
 class Impressora{
@@ -49,24 +53,26 @@ public class Exemplo02 {
         lista.add(new Produto("Videogame", 1999.00));
         lista.add(new Produto("Microondas", 550.00));
 
-        //lambda expression com argumento
-        System.out.println("lambda expression com argumento");
-        lista.forEach((produto) -> System.out.println(produto.getNome() + " = " + produto.getPreco()));
-        System.out.println("\n");
+//        //lambda expression com argumento
+//        System.out.println("lambda expression com argumento");
+//        lista.forEach((produto) -> System.out.println(produto.getNome() + " = " + produto.getPreco()));
+//        System.out.println("\n");
 
-        lista.sort((produto1, produto2) -> produto1.getPreco().compareTo(produto2.getPreco())); //ordenando do menor para o maior
+//        lista.sort((produto1, produto2) -> produto1.getPreco().compareTo(produto2.getPreco())); //ordenando do menor para o maior
+//
+//        System.out.println("utilizando vários métodos dentro da lambda");
+//        lista.forEach((produto) -> { //utilizando vários métodos dentro da lambda
+//                    System.out.println(produto.getNome());
+//                    System.out.println(produto.getPreco());
+//                }
+//        );
+//        System.out.println("\n");
+//
+//        // Method references
+//        System.out.println("Method references");
+//        lista.forEach(Impressora::imprime);
 
-        System.out.println("utilizando vários métodos dentro da lambda");
-        lista.forEach((produto) -> { //utilizando vários métodos dentro da lambda
-                    System.out.println(produto.getNome());
-                    System.out.println(produto.getPreco());
-                }
-        );
-        System.out.println("\n");
-
-        // Method references
-        System.out.println("Method references");
-        lista.forEach(Impressora::imprime);
+        lista.forEach(Produto::imprime);
 
     }
 }
